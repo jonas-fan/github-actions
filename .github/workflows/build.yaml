@@ -35,5 +35,7 @@ jobs:
         run: |
           whoami
           uname -a
+          pwd
           uptime
           cat /etc/*release
+          mount
