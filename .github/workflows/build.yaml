@@ -39,6 +39,6 @@ jobs:
       - name: Show README inside a Docker Container
         uses: docker://alpine:latest
         with:
-          entrypoint: /bin/sh -c
-          args: cat README.md
+          entrypoint: /bin/sh
+          args: -c "cat README.md"
 
