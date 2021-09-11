@@ -28,18 +28,17 @@ jobs:
   docker:
     name: docker
     runs-on: ubuntu-latest
-    container:
-      image: alpine:latest
     steps:
-      - name: Environment
-        run: |
-          whoami
-          uname -a
-          pwd
-          uptime
-          cat /etc/*release
-          mount
+      - name: Checkout
+        uses: action/checkout@v2
 
       - name: Show README
         run: |
-          ls -al
+          cat README.md
+
+      - name: Show README inside a Docker Container
+        uses: docker://alpine:latest
+        with:
+          entrypoint: /bin/sh -c
+          args: cat README.md
+
