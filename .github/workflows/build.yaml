@@ -42,4 +42,4 @@ jobs:
 
       - name: Show README
         run: |
-          cat README.md
+          ls -al
