@@ -39,3 +39,7 @@ jobs:
           uptime
           cat /etc/*release
           mount
+
+      - name: Show README
+        run: |
+          cat README.md
