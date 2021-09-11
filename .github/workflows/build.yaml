@@ -10,18 +10,18 @@ jobs:
     name: build
     runs-on: ubuntu-latest
     steps:
-      - name: Host info
+      - name: Environment
         run: |
           whoami
           uname -a
           uptime
           cat /etc/*release
-      
+
       - name: Setup Go env
         uses: actions/setup-go@v2.1.4
         with:
           go-version: 1.17.1
-      
+
       - name: Go version
         run: go version
 
@@ -30,6 +30,8 @@ jobs:
     steps:
       - name: Run as a container
         uses: docker://alpine:latest
+
+      - name: Environment
         run: |
           whoami
           uname -a
