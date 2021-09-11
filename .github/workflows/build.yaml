@@ -27,6 +27,7 @@ jobs:
 
   docker:
     name: docker
+    runs-on: ubuntu-latest
     steps:
       - name: Run as a container
         uses: docker://alpine:latest
