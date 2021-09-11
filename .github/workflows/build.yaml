@@ -25,14 +25,11 @@ jobs:
       - name: Go version
         run: go version
 
-      - name: Run a command that doesn't exist
-        run: breaaaaaaak me
-
   docker:
     name: docker
     steps:
       - name: Run as a container
-        uses: docker://apline:latest
+        uses: docker://alpine:latest
         run: |
           whoami
           uname -a
