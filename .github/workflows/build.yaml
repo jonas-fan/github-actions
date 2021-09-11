@@ -27,6 +27,7 @@ jobs:
 
   docker:
     name: docker
+    runs-on: ubuntu-latest
     container:
       image: alpine:latest
     steps:
