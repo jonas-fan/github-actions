@@ -23,7 +23,14 @@ jobs:
           go-version: 1.17.1
 
       - name: Go version
-        run: go version
+        run: |
+          go version | tee /tmp/go-version.log
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: go-verion
+          path: /tmp/go-version.log
 
   docker:
     name: docker
@@ -41,4 +48,3 @@ jobs:
         with:
           entrypoint: /bin/sh
           args: -c "cat README.md"
-
